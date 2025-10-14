@@ -6,7 +6,7 @@ import streamlit as st
 from PIL import Image
 
 st.set_page_config(page_title="일자리상황판 - 지역/구분 뷰어", layout="wide")
-st.title("전국-조기경보서비스")
+st.title("전국-일자리 조기경보서비스")
 
 EXCEL_PATH = "region_data.xlsx"
 
@@ -230,4 +230,5 @@ else:
                     st.image(Image.open(abs_path), use_container_width=True, caption=str(cat))
                 else:
                     st.warning(f"이미지 없음: {abs_path}")
+
 
