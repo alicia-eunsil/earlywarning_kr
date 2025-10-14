@@ -227,6 +227,7 @@ else:
             abs_path = rel_path if os.path.isabs(rel_path) else os.path.join(base_dir, rel_path)
             with cols[j]:
                 if os.path.exists(abs_path):
-                    st.image(Image.open(abs_path), use_column_width=True, caption=str(cat))
+                    st.image(Image.open(abs_path), use_container_width=True, caption=str(cat))
                 else:
                     st.warning(f"이미지 없음: {abs_path}")
+
