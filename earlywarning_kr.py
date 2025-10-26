@@ -154,15 +154,7 @@ def highlight_status(val):
 
 # --------- DATA 표 표시 ---------
 st.markdown("### 〓지역별 일자리지표〓")
-styled_df = (
-    one_row_df.style
-        .map(highlight_status)
-        .set_properties(**{"text-align": "center"})  # 셀 가운데 정렬
-        .set_table_styles(
-            [dict(selector="th", props=[("text-align", "center")])]  # 컬럼명 가운데 정렬
-        )
-)
-
+styled_df = one_row_df.style.map(highlight_status)
 st.dataframe(styled_df, use_container_width=True, hide_index=True)
 
 st.markdown("---")
@@ -238,6 +230,7 @@ else:
                     st.image(Image.open(abs_path), use_container_width=True, caption=str(cat))
                 else:
                     st.warning(f"이미지 없음: {abs_path}")
+
 
 
 
